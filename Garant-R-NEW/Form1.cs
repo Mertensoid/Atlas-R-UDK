@@ -320,7 +320,7 @@ namespace Garant_R_NEW
 
         private void DataFromPort_TextChanged(object sender, EventArgs e)
         {
-            dataFromPort.AppendText("Your text here");
+            dataFromPort.AppendText("a");
             dataFromPort.Select(0, 0);
             dataFromPort.ScrollToCaret();
             //dataFromPort.SelectionStart = dataFromPort.Text.Length;
@@ -330,6 +330,9 @@ namespace Garant_R_NEW
 
         private void DataFromPort2_TextChanged(object sender, EventArgs e)
         {
+            dataFromPort2.AppendText("a");
+            dataFromPort2.Select(0, 0);
+            dataFromPort2.ScrollToCaret();
             //dataFromPort2.SelectionStart = dataFromPort2.Text.Length;
             //dataFromPort2.ScrollToCaret();
             //dataFromPort2.Refresh();
@@ -337,6 +340,9 @@ namespace Garant_R_NEW
 
         private void DataFromPort3_TextChanged(object sender, EventArgs e)
         {
+            dataFromPort3.AppendText("a");
+            dataFromPort3.Select(0, 0);
+            dataFromPort3.ScrollToCaret();
             //dataFromPort3.SelectionStart = dataFromPort3.Text.Length;
             //dataFromPort3.ScrollToCaret();
             //dataFromPort3.Refresh();
@@ -344,6 +350,9 @@ namespace Garant_R_NEW
 
         private void DataFromPort4_TextChanged(object sender, EventArgs e)
         {
+            dataFromPort4.AppendText("a");
+            dataFromPort4.Select(0, 0);
+            dataFromPort4.ScrollToCaret();
             //dataFromPort4.SelectionStart = dataFromPort4.Text.Length;
             //dataFromPort4.ScrollToCaret();
             //dataFromPort4.Refresh();
@@ -575,11 +584,6 @@ namespace Garant_R_NEW
 
         private void lbCOMinfo_Click(object sender, EventArgs e)
         {
-        }
-
-        private void dataFromPort4_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void parcerArchive(string data)

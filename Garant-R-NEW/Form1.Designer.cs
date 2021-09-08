@@ -104,6 +104,13 @@
             this.setDate = new System.Windows.Forms.Button();
             this.getTime = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.DateTimePicker();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.setDetectionAlgorithmX = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataFromPort2 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button20 = new System.Windows.Forms.Button();
@@ -137,13 +144,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbCOMinfo = new System.Windows.Forms.Label();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.setDetectionAlgorithmX = new System.Windows.Forms.Button();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -162,14 +162,14 @@
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -190,7 +190,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -205,7 +205,7 @@
             this.свойстваToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.parametersToolStripMenuItem});
             this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
+            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.свойстваToolStripMenuItem.Text = "Параметры";
             // 
             // parametersToolStripMenuItem
@@ -227,7 +227,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -776,7 +776,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage7.Size = new System.Drawing.Size(539, 466);
+            this.tabPage7.Size = new System.Drawing.Size(527, 466);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Связь РКН-БУР";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -794,7 +794,7 @@
             this.groupBox13.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox13.Size = new System.Drawing.Size(515, 122);
+            this.groupBox13.Size = new System.Drawing.Size(503, 122);
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             // 
@@ -851,7 +851,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage6.Size = new System.Drawing.Size(539, 466);
+            this.tabPage6.Size = new System.Drawing.Size(527, 466);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Пользовательские";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1090,6 +1090,75 @@
             this.date.Size = new System.Drawing.Size(240, 22);
             this.date.TabIndex = 0;
             this.date.Value = new System.DateTime(1988, 11, 16, 0, 0, 0, 0);
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.groupBox16);
+            this.tabPage8.Controls.Add(this.groupBox15);
+            this.tabPage8.Controls.Add(this.groupBox14);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(527, 466);
+            this.tabPage8.TabIndex = 3;
+            this.tabPage8.Text = "Название";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Location = new System.Drawing.Point(6, 229);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(515, 127);
+            this.groupBox16.TabIndex = 2;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Режим \"Автоматика отключена\"";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Location = new System.Drawing.Point(6, 91);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(515, 132);
+            this.groupBox15.TabIndex = 1;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Режим ручного пуска";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.setDetectionAlgorithmX);
+            this.groupBox14.Controls.Add(this.label3);
+            this.groupBox14.Controls.Add(this.comboBox2);
+            this.groupBox14.Location = new System.Drawing.Point(6, 6);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(515, 79);
+            this.groupBox14.TabIndex = 0;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Алгоритм сработки";
+            // 
+            // setDetectionAlgorithmX
+            // 
+            this.setDetectionAlgorithmX.Location = new System.Drawing.Point(278, 21);
+            this.setDetectionAlgorithmX.Name = "setDetectionAlgorithmX";
+            this.setDetectionAlgorithmX.Size = new System.Drawing.Size(231, 51);
+            this.setDetectionAlgorithmX.TabIndex = 2;
+            this.setDetectionAlgorithmX.Text = "Выбрать";
+            this.setDetectionAlgorithmX.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Выбирите режим сработки";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 49);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(247, 24);
+            this.comboBox2.TabIndex = 0;
             // 
             // dataFromPort2
             // 
@@ -1475,7 +1544,7 @@
             this.dataFromPort4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataFromPort4.Size = new System.Drawing.Size(555, 600);
             this.dataFromPort4.TabIndex = 9;
-            this.dataFromPort4.TextChanged += new System.EventHandler(this.dataFromPort4_TextChanged_1);
+            this.dataFromPort4.TextChanged += new System.EventHandler(this.DataFromPort4_TextChanged);
             // 
             // timer1
             // 
@@ -1491,75 +1560,6 @@
             this.lbCOMinfo.TabIndex = 2;
             this.lbCOMinfo.Text = "label3";
             this.lbCOMinfo.Click += new System.EventHandler(this.lbCOMinfo_Click);
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.groupBox16);
-            this.tabPage8.Controls.Add(this.groupBox15);
-            this.tabPage8.Controls.Add(this.groupBox14);
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(527, 466);
-            this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "Название";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.setDetectionAlgorithmX);
-            this.groupBox14.Controls.Add(this.label3);
-            this.groupBox14.Controls.Add(this.comboBox2);
-            this.groupBox14.Location = new System.Drawing.Point(6, 6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(515, 79);
-            this.groupBox14.TabIndex = 0;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Алгоритм сработки";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 24);
-            this.comboBox2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Выбирите режим сработки";
-            // 
-            // setDetectionAlgorithmX
-            // 
-            this.setDetectionAlgorithmX.Location = new System.Drawing.Point(278, 21);
-            this.setDetectionAlgorithmX.Name = "setDetectionAlgorithmX";
-            this.setDetectionAlgorithmX.Size = new System.Drawing.Size(231, 51);
-            this.setDetectionAlgorithmX.TabIndex = 2;
-            this.setDetectionAlgorithmX.Text = "Выбрать";
-            this.setDetectionAlgorithmX.UseVisualStyleBackColor = true;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Location = new System.Drawing.Point(6, 91);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(515, 132);
-            this.groupBox15.TabIndex = 1;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Режим ручного пуска";
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Location = new System.Drawing.Point(6, 229);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(515, 127);
-            this.groupBox16.TabIndex = 2;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Режим \"Автоматика отключена\"";
             // 
             // Form1
             // 
@@ -1606,6 +1606,9 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1615,9 +1618,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
