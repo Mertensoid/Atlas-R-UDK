@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
 using System.Globalization;
+using System.Management;
+using System.Runtime.InteropServices;
 
 namespace Garant_R_NEW
 {
     public partial class Form1 : Form
     {
-
         public SerialPort port = new SerialPort();
         public int alarmStorage, bosFaultStorage, burFaultStorage, autoStorage, voltStorage;
 
@@ -102,6 +103,36 @@ namespace Garant_R_NEW
                 this.Width = this.Width + 18;
                 this.Top = 0;
             }
+
+            lbCOMinfo.Text = port.PortName + " " + port.BaudRate + " bps";
+        }
+
+        private void DataFromPort_TextChanged(object sender, EventArgs e)
+        {
+            dataFromPort.SelectionStart = dataFromPort.Text.Length;
+            dataFromPort.ScrollToCaret();
+            dataFromPort.Refresh();
+        }
+
+        private void DataFromPort2_TextChanged(object sender, EventArgs e)
+        {
+            dataFromPort2.SelectionStart = dataFromPort2.Text.Length;
+            dataFromPort2.ScrollToCaret();
+            dataFromPort2.Refresh();
+        }
+
+        private void DataFromPort3_TextChanged(object sender, EventArgs e)
+        {
+            dataFromPort3.SelectionStart = dataFromPort3.Text.Length;
+            dataFromPort3.ScrollToCaret();
+            dataFromPort3.Refresh();
+        }
+
+        private void DataFromPort4_TextChanged(object sender, EventArgs e)
+        {
+            dataFromPort4.SelectionStart = dataFromPort4.Text.Length;
+            dataFromPort4.ScrollToCaret();
+            dataFromPort4.Refresh();
         }
 
         private void parametersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,10 +143,31 @@ namespace Garant_R_NEW
             F2.Show();
         }
 
+        //public async Task<string> DoWork()
+        //{
+        //    Task<string> task = new Task<string>(ReadArchiveAsync);
+        //    task.Start();
+        //    string a = await task;
+        //    return "";
+        //}
+
+        //public string ReadArchiveAsync()
+        //{
+        //    string indata;
+        //    indata = port.ReadExisting();
+        //    buffer += indata;
+        //    while (buffer.Contains("\r"))
+        //    {
+        //        str = buffer.Remove(buffer.IndexOf("\r"));
+        //        buffer = buffer.Remove(0, buffer.IndexOf("\r") + 1);
+        //        this.BeginInvoke(new SetTextDeleg(si_DataReceived1), new object[] { str });
+        //    }
+        //    return "";
+        //}
+
         //Обработчкик события получения нового сообщение из COM-порта
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-
             if (archiveReading == true)
             {
                 System.Threading.Thread.Sleep(100);
@@ -155,7 +207,10 @@ namespace Garant_R_NEW
 
         private delegate void SetTextDeleg(string text);
 
-        //Отправка команд на COM-порт
+        /// <summary>
+        /// Отправка команд на COM-порт
+        /// </summary>
+        /// <param name="comm"></param>
         public void sendCommand(string comm)
         {
             try
@@ -207,6 +262,9 @@ namespace Garant_R_NEW
 
         private void getTime_Click(object sender, EventArgs e)
         {
+            //DateTime localTime = DateTime.Now;
+            //dataFromPort2.Text += "[" + localTime.ToString() + "]: ";
+            //dataFromPort2.Text += "Дата " + date + "\r\n";
             sendCommand("Date");
             sendCommand("Time");
         }
@@ -318,46 +376,6 @@ namespace Garant_R_NEW
             timeParcer(timeLabel.Text);
         }
 
-        private void DataFromPort_TextChanged(object sender, EventArgs e)
-        {
-            dataFromPort.AppendText("a");
-            dataFromPort.Select(0, 0);
-            dataFromPort.ScrollToCaret();
-            //dataFromPort.SelectionStart = dataFromPort.Text.Length;
-            //dataFromPort.ScrollToCaret();
-            //dataFromPort.Refresh();
-        }
-
-        private void DataFromPort2_TextChanged(object sender, EventArgs e)
-        {
-            dataFromPort2.AppendText("a");
-            dataFromPort2.Select(0, 0);
-            dataFromPort2.ScrollToCaret();
-            //dataFromPort2.SelectionStart = dataFromPort2.Text.Length;
-            //dataFromPort2.ScrollToCaret();
-            //dataFromPort2.Refresh();
-        }
-
-        private void DataFromPort3_TextChanged(object sender, EventArgs e)
-        {
-            dataFromPort3.AppendText("a");
-            dataFromPort3.Select(0, 0);
-            dataFromPort3.ScrollToCaret();
-            //dataFromPort3.SelectionStart = dataFromPort3.Text.Length;
-            //dataFromPort3.ScrollToCaret();
-            //dataFromPort3.Refresh();
-        }
-
-        private void DataFromPort4_TextChanged(object sender, EventArgs e)
-        {
-            dataFromPort4.AppendText("a");
-            dataFromPort4.Select(0, 0);
-            dataFromPort4.ScrollToCaret();
-            //dataFromPort4.SelectionStart = dataFromPort4.Text.Length;
-            //dataFromPort4.ScrollToCaret();
-            //dataFromPort4.Refresh();
-        }
-
         private void setStartDelayTime_Click(object sender, EventArgs e)
         {
             sendCommand("SetDelayStart " + startDelayTime.Text);
@@ -401,7 +419,7 @@ namespace Garant_R_NEW
             sendCommand("Read_ev 1");
             //askArchiveForPeriod " + 
             //dateTimePicker1.Value.Day.ToString() + " " + dateTimePicker1.Value.Month.ToString() + " " + dateTimePicker1.Value.Year.ToString() + " " + dateTimePicker1.Value.Hour.ToString() + " " + dateTimePicker1.Value.Minute.ToString() + " " +
-            //dateTimePicker2.Value.Day.ToString() + " " + dateTimePicker2.Value.Month.ToString() + " " + dateTimePicker2.Value.Year.ToString() + " " + dateTimePicker2.Value.Hour.ToString() + " " + dateTimePicker2.Value.Minute.ToString());
+            //dateTimePicker2.Value.Day.ToString() + " " + dateTimePicker2.Value.Month.ToString() + " " + dateTimePicker2.Value.Year.ToString() + f" " + dateTimePicker2.Value.Hour.ToString() + " " + dateTimePicker2.Value.Minute.ToString());
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -428,7 +446,7 @@ namespace Garant_R_NEW
             catch
             { }
         }
-        
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -469,7 +487,7 @@ namespace Garant_R_NEW
 
         private void button16_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Вы уверенны, что хотите очистить?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Вы уверенны, что хотите очистить?", "Очистка", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 sendCommand("ClrDatabase");
         }
 
@@ -508,7 +526,7 @@ namespace Garant_R_NEW
 
         private void button21_Click(object sender, EventArgs e)
         {
-            sendCommand("Date " + DateTime.Now.Day.ToString() + " " + DateTime.Now.Month.ToString() + " " + DateTime.Now.Year.ToString().Remove(0,2));
+            sendCommand("Date " + DateTime.Now.Day.ToString() + " " + DateTime.Now.Month.ToString() + " " + DateTime.Now.Year.ToString().Remove(0, 2));
             sendCommand("Time " + DateTime.Now.Hour.ToString() + " " + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Second.ToString());
         }
 
@@ -545,7 +563,7 @@ namespace Garant_R_NEW
             {
                 MessageBox.Show("Отсутствует файл справки");
             }
-            
+
         }
 
         private void button13_Click_1(object sender, EventArgs e)
@@ -558,7 +576,7 @@ namespace Garant_R_NEW
             {
                 MessageBox.Show("Выберите ячейку памяти");
             }
-            
+
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -582,8 +600,69 @@ namespace Garant_R_NEW
             }
         }
 
-        private void lbCOMinfo_Click(object sender, EventArgs e)
+        private void setDetectionAlgorithmX_Click(object sender, EventArgs e)
         {
+            if (cbRegimSrabotka.Text != "")
+            {
+                switch (cbRegimSrabotka.Text)
+                {
+                    case "A":
+                        sendCommand("setDetectionAlgorithm 0");
+                        break;
+                    case "B":
+                        sendCommand("setDetectionAlgorithm 1");
+                        break;
+                    case "C":
+                        sendCommand("setDetectionAlgorithm 2");
+                        break;
+                    default:
+                        MessageBox.Show("Нет такого алгоритма, выберите существующий");
+                        break;
+                }
+            }
+            else
+                MessageBox.Show("Выберите режим сработки");
+        }
+
+        private void setStartAlgorithmXY_Click(object sender, EventArgs e)
+        {
+            if (rbTemp.Checked == true && rbDelay.Checked == true)
+            {
+                sendCommand("setStartAlgorithm 0 0");
+            }
+            else if (rbTemp.Checked == true && rbLikeAuto.Checked == true)
+            {
+                sendCommand("setStartAlgorithm 0 1");
+            }
+            else if (rbBos.Checked == true && rbDelay.Checked == true)
+            {
+                sendCommand("setStartAlgorithm 1 0");
+            }
+            else if (rbBos.Checked == true && rbLikeAuto.Checked == true)
+            {
+                sendCommand("setStartAlgorithm 1 1");
+            }
+            else
+                MessageBox.Show("Выберите Режим ручного пуска и Выбор задержки");
+        }
+
+        private void setAutoAlgorithmX_Click(object sender, EventArgs e)
+        {
+            if (rbBlockAuto.Checked == true)
+                sendCommand("setAutoAlgorithm 0");
+            else
+                sendCommand("setAutoAlgorithm 1");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            sendCommand("Date");
+            sendCommand("Time");
+        }
+
+        private void button23_Click_1(object sender, EventArgs e)
+        {
+            sendCommand("Read_all");
         }
 
         private void parcerArchive(string data)
@@ -608,14 +687,15 @@ namespace Garant_R_NEW
         private void parcer(string data_fromPort)
         {
             DateTime localTime = DateTime.Now;
-            
 
-            if (!data_fromPort.Contains("Ev") && !data_fromPort.Contains("Текущее состояние направления") && !data_fromPort.Contains("sound") && !data_fromPort.Contains("checkedPass"))
+
+            if (!data_fromPort.Contains("Ev") && !data_fromPort.Contains("Текущее состояние направления")
+                && !data_fromPort.Contains("sound") && !data_fromPort.Contains("checkedPass")
+                && !data_fromPort.Contains("Ошибка записи ключа"))
             {
                 dataFromPort.Text += "[" + localTime.ToString() + "]: ";
                 dataFromPort.Text += data_fromPort + "\r\n";
-                
-                
+
             }
 
             if (!data_fromPort.Contains("Ev") && !data_fromPort.Contains("checkedPass"))
@@ -630,7 +710,7 @@ namespace Garant_R_NEW
                 }
                 catch
                 { }
-            
+
             string textToData2 = "";
             string textToData3 = "";
             string textToData4 = "";
@@ -643,7 +723,7 @@ namespace Garant_R_NEW
                 this.WindowState = FormWindowState.Normal;
                 btIndicator_new.Text = "СОЕДИНЕНИЕ В НОРМЕ";
                 BB_green(btIndicator_new);
-                
+
             }
             else if (data_fromPort.Contains("checkedPass false"))
             {
@@ -693,6 +773,7 @@ namespace Garant_R_NEW
                 timer1.Stop();
                 timer1.Interval = 1000;
                 timer1.Start();
+
             }
             else if (data_fromPort.Contains("Установлена дата - "))
             {
@@ -762,6 +843,18 @@ namespace Garant_R_NEW
                 textToData2 = data_fromPort.Trim();
             }
             else if (data_fromPort.Contains("Установлена связь с БУР"))
+            {
+                textToData2 = data_fromPort.Trim();
+            }
+            else if (data_fromPort.Contains("Ошибка записи ключа"))
+            {
+                textToData2 = data_fromPort.Trim();
+            }
+            else if (data_fromPort.Contains("Дата"))
+            {
+                textToData2 = data_fromPort.Trim();
+            }
+            else if (data_fromPort.Contains("Время"))
             {
                 textToData2 = data_fromPort.Trim();
             }
@@ -849,7 +942,7 @@ namespace Garant_R_NEW
 
                 if ((i & 0x03) == 0)
                 {
-                    MessageBox.Show("Введите серийный номер БУР исп. А");
+                    //MessageBox.Show("Введите серийный номер БУР исп. А");
                 }
 
 
@@ -914,7 +1007,7 @@ namespace Garant_R_NEW
                 strDirStatus = strDirStatus.Remove(0, strDirStatus.IndexOf(" ") + 1);
                 i = Convert.ToInt32(dirStatus);
 
-                
+
                 if ((i & 32) > 0)
                 {
                     automationBlocked = true;
@@ -996,12 +1089,12 @@ namespace Garant_R_NEW
                     supplyIndicator_1_new.Text = "ПИТАНИЕ 1 В НОРМЕ";
                     BB_green(supplyIndicator_1_new);
                 }
-                    if ((i & 128) > 0)
+                if ((i & 128) > 0)
                 {
                     supply_2_High = true;
                     supplyIndicator_2_new.Text = "ПИТАНИЕ 2 НЕИСПРАВНО";
                     BB_yellow(supplyIndicator_2_new);
-                
+
                     //supply_1_Low = true;
                     //supplyIndicator_1_new.Text = "Напряжение понижено";
                     //BB_yellow(supplyIndicator_1_new);

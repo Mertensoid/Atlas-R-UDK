@@ -106,18 +106,28 @@
             this.date = new System.Windows.Forms.DateTimePicker();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.setAutoAlgorithmX = new System.Windows.Forms.Button();
+            this.rbAddDelay = new System.Windows.Forms.RadioButton();
+            this.rbBlockAuto = new System.Windows.Forms.RadioButton();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.rbDelay = new System.Windows.Forms.RadioButton();
+            this.rbLikeAuto = new System.Windows.Forms.RadioButton();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.rbTemp = new System.Windows.Forms.RadioButton();
+            this.rbBos = new System.Windows.Forms.RadioButton();
+            this.setStartAlgorithmXY = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.setDetectionAlgorithmX = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbRegimSrabotka = new System.Windows.Forms.ComboBox();
             this.dataFromPort2 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button20 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataFromPort = new System.Windows.Forms.TextBox();
+            this.dataFromPort = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.testIndicator_new = new Garant_R_NEW.Beauty_Button_1();
             this.buFaultIndicator_new = new Garant_R_NEW.Beauty_Button_1();
@@ -136,6 +146,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.readAllMessages = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -144,6 +155,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbCOMinfo = new System.Windows.Forms.Label();
+            this.cbAutoScroll = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -163,6 +175,10 @@
             this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -309,6 +325,7 @@
             this.dataFromPort3.Margin = new System.Windows.Forms.Padding(4);
             this.dataFromPort3.Multiline = true;
             this.dataFromPort3.Name = "dataFromPort3";
+            this.dataFromPort3.ReadOnly = true;
             this.dataFromPort3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataFromPort3.Size = new System.Drawing.Size(555, 539);
             this.dataFromPort3.TabIndex = 7;
@@ -1101,47 +1118,162 @@
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(527, 466);
             this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "Название";
+            this.tabPage8.Text = "Придумать название";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // groupBox16
             // 
-            this.groupBox16.Location = new System.Drawing.Point(6, 229);
+            this.groupBox16.Controls.Add(this.setAutoAlgorithmX);
+            this.groupBox16.Controls.Add(this.rbAddDelay);
+            this.groupBox16.Controls.Add(this.rbBlockAuto);
+            this.groupBox16.Location = new System.Drawing.Point(6, 248);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(515, 127);
+            this.groupBox16.Size = new System.Drawing.Size(515, 81);
             this.groupBox16.TabIndex = 2;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Режим \"Автоматика отключена\"";
+            this.groupBox16.Text = "Режим работы \"Автоматика отключена\"";
+            // 
+            // setAutoAlgorithmX
+            // 
+            this.setAutoAlgorithmX.Location = new System.Drawing.Point(246, 21);
+            this.setAutoAlgorithmX.Name = "setAutoAlgorithmX";
+            this.setAutoAlgorithmX.Size = new System.Drawing.Size(263, 48);
+            this.setAutoAlgorithmX.TabIndex = 2;
+            this.setAutoAlgorithmX.Text = "Выбрать режим работы";
+            this.setAutoAlgorithmX.UseVisualStyleBackColor = true;
+            this.setAutoAlgorithmX.Click += new System.EventHandler(this.setAutoAlgorithmX_Click);
+            // 
+            // rbAddDelay
+            // 
+            this.rbAddDelay.AutoSize = true;
+            this.rbAddDelay.Location = new System.Drawing.Point(10, 48);
+            this.rbAddDelay.Name = "rbAddDelay";
+            this.rbAddDelay.Size = new System.Drawing.Size(209, 21);
+            this.rbAddDelay.TabIndex = 1;
+            this.rbAddDelay.Text = "Дополнительная задержка";
+            this.rbAddDelay.UseVisualStyleBackColor = true;
+            // 
+            // rbBlockAuto
+            // 
+            this.rbBlockAuto.AutoSize = true;
+            this.rbBlockAuto.Checked = true;
+            this.rbBlockAuto.Location = new System.Drawing.Point(10, 21);
+            this.rbBlockAuto.Name = "rbBlockAuto";
+            this.rbBlockAuto.Size = new System.Drawing.Size(188, 21);
+            this.rbBlockAuto.TabIndex = 0;
+            this.rbBlockAuto.TabStop = true;
+            this.rbBlockAuto.Text = "Блокировка автоматики";
+            this.rbBlockAuto.UseVisualStyleBackColor = true;
             // 
             // groupBox15
             // 
-            this.groupBox15.Location = new System.Drawing.Point(6, 91);
+            this.groupBox15.Controls.Add(this.groupBox18);
+            this.groupBox15.Controls.Add(this.groupBox17);
+            this.groupBox15.Controls.Add(this.setStartAlgorithmXY);
+            this.groupBox15.Location = new System.Drawing.Point(6, 98);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(515, 132);
+            this.groupBox15.Size = new System.Drawing.Size(515, 144);
             this.groupBox15.TabIndex = 1;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Режим ручного пуска";
+            this.groupBox15.Text = "Режим пуска с ИПР, УДК, кнопки ручного пуска БУР, КП";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.rbDelay);
+            this.groupBox18.Controls.Add(this.rbLikeAuto);
+            this.groupBox18.Location = new System.Drawing.Point(259, 21);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(250, 79);
+            this.groupBox18.TabIndex = 10;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Выбор задержки:";
+            // 
+            // rbDelay
+            // 
+            this.rbDelay.AutoSize = true;
+            this.rbDelay.Location = new System.Drawing.Point(6, 23);
+            this.rbDelay.Name = "rbDelay";
+            this.rbDelay.Size = new System.Drawing.Size(120, 21);
+            this.rbDelay.TabIndex = 7;
+            this.rbDelay.Text = "Без задержки";
+            this.rbDelay.UseVisualStyleBackColor = true;
+            // 
+            // rbLikeAuto
+            // 
+            this.rbLikeAuto.AutoSize = true;
+            this.rbLikeAuto.Checked = true;
+            this.rbLikeAuto.Location = new System.Drawing.Point(6, 51);
+            this.rbLikeAuto.Name = "rbLikeAuto";
+            this.rbLikeAuto.Size = new System.Drawing.Size(235, 21);
+            this.rbLikeAuto.TabIndex = 8;
+            this.rbLikeAuto.TabStop = true;
+            this.rbLikeAuto.Text = "Как при автоматическом пуске";
+            this.rbLikeAuto.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.rbTemp);
+            this.groupBox17.Controls.Add(this.rbBos);
+            this.groupBox17.Location = new System.Drawing.Point(13, 21);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(240, 79);
+            this.groupBox17.TabIndex = 12;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Режим ручного пуска:";
+            // 
+            // rbTemp
+            // 
+            this.rbTemp.AutoSize = true;
+            this.rbTemp.Checked = true;
+            this.rbTemp.Location = new System.Drawing.Point(6, 21);
+            this.rbTemp.Name = "rbTemp";
+            this.rbTemp.Size = new System.Drawing.Size(220, 21);
+            this.rbTemp.TabIndex = 5;
+            this.rbTemp.TabStop = true;
+            this.rbTemp.Text = "Независимо от температуры";
+            this.rbTemp.UseVisualStyleBackColor = true;
+            // 
+            // rbBos
+            // 
+            this.rbBos.AutoSize = true;
+            this.rbBos.Location = new System.Drawing.Point(6, 48);
+            this.rbBos.Name = "rbBos";
+            this.rbBos.Size = new System.Drawing.Size(206, 21);
+            this.rbBos.TabIndex = 6;
+            this.rbBos.Text = "С подтверждением от БОС";
+            this.rbBos.UseVisualStyleBackColor = true;
+            // 
+            // setStartAlgorithmXY
+            // 
+            this.setStartAlgorithmXY.Location = new System.Drawing.Point(10, 106);
+            this.setStartAlgorithmXY.Name = "setStartAlgorithmXY";
+            this.setStartAlgorithmXY.Size = new System.Drawing.Size(499, 32);
+            this.setStartAlgorithmXY.TabIndex = 11;
+            this.setStartAlgorithmXY.Text = "Выбрать";
+            this.setStartAlgorithmXY.UseVisualStyleBackColor = true;
+            this.setStartAlgorithmXY.Click += new System.EventHandler(this.setStartAlgorithmXY_Click);
             // 
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.setDetectionAlgorithmX);
             this.groupBox14.Controls.Add(this.label3);
-            this.groupBox14.Controls.Add(this.comboBox2);
+            this.groupBox14.Controls.Add(this.cbRegimSrabotka);
             this.groupBox14.Location = new System.Drawing.Point(6, 6);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(515, 79);
+            this.groupBox14.Size = new System.Drawing.Size(515, 86);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Алгоритм сработки";
             // 
             // setDetectionAlgorithmX
             // 
-            this.setDetectionAlgorithmX.Location = new System.Drawing.Point(278, 21);
+            this.setDetectionAlgorithmX.Location = new System.Drawing.Point(278, 26);
             this.setDetectionAlgorithmX.Name = "setDetectionAlgorithmX";
-            this.setDetectionAlgorithmX.Size = new System.Drawing.Size(231, 51);
+            this.setDetectionAlgorithmX.Size = new System.Drawing.Size(231, 47);
             this.setDetectionAlgorithmX.TabIndex = 2;
-            this.setDetectionAlgorithmX.Text = "Выбрать";
+            this.setDetectionAlgorithmX.Text = "Выбрать режим сработки";
             this.setDetectionAlgorithmX.UseVisualStyleBackColor = true;
+            this.setDetectionAlgorithmX.Click += new System.EventHandler(this.setDetectionAlgorithmX_Click);
             // 
             // label3
             // 
@@ -1150,15 +1282,19 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Выбирите режим сработки";
+            this.label3.Text = "Выберите режим сработки";
             // 
-            // comboBox2
+            // cbRegimSrabotka
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 24);
-            this.comboBox2.TabIndex = 0;
+            this.cbRegimSrabotka.FormattingEnabled = true;
+            this.cbRegimSrabotka.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.cbRegimSrabotka.Location = new System.Drawing.Point(6, 49);
+            this.cbRegimSrabotka.Name = "cbRegimSrabotka";
+            this.cbRegimSrabotka.Size = new System.Drawing.Size(247, 24);
+            this.cbRegimSrabotka.TabIndex = 0;
             // 
             // dataFromPort2
             // 
@@ -1166,6 +1302,7 @@
             this.dataFromPort2.Margin = new System.Windows.Forms.Padding(4);
             this.dataFromPort2.Multiline = true;
             this.dataFromPort2.Name = "dataFromPort2";
+            this.dataFromPort2.ReadOnly = true;
             this.dataFromPort2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataFromPort2.Size = new System.Drawing.Size(555, 259);
             this.dataFromPort2.TabIndex = 2;
@@ -1240,14 +1377,13 @@
             // 
             // dataFromPort
             // 
-            this.dataFromPort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataFromPort.Location = new System.Drawing.Point(0, 0);
-            this.dataFromPort.Margin = new System.Windows.Forms.Padding(0);
-            this.dataFromPort.Multiline = true;
+            this.dataFromPort.Location = new System.Drawing.Point(3, 3);
             this.dataFromPort.Name = "dataFromPort";
-            this.dataFromPort.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataFromPort.Size = new System.Drawing.Size(559, 378);
+            this.dataFromPort.ReadOnly = true;
+            this.dataFromPort.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.dataFromPort.Size = new System.Drawing.Size(553, 372);
             this.dataFromPort.TabIndex = 0;
+            this.dataFromPort.Text = "";
             this.dataFromPort.TextChanged += new System.EventHandler(this.DataFromPort_TextChanged);
             // 
             // groupBox1
@@ -1458,6 +1594,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(567, 816);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
@@ -1477,6 +1614,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.button23);
             this.groupBox10.Controls.Add(this.button12);
             this.groupBox10.Controls.Add(this.readAllMessages);
             this.groupBox10.Controls.Add(this.button10);
@@ -1491,47 +1629,57 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Управление архивом";
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(8, 27);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(355, 55);
+            this.button23.TabIndex = 21;
+            this.button23.Text = "Показать весь архив";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click_1);
+            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(8, 26);
+            this.button12.Location = new System.Drawing.Point(370, 34);
             this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(252, 55);
+            this.button12.Size = new System.Drawing.Size(157, 40);
             this.button12.TabIndex = 20;
-            this.button12.Text = "Очистить окно журнала событий";
+            this.button12.Text = "Очистить";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // readAllMessages
             // 
-            this.readAllMessages.Location = new System.Drawing.Point(275, 89);
+            this.readAllMessages.Location = new System.Drawing.Point(370, 89);
             this.readAllMessages.Margin = new System.Windows.Forms.Padding(4);
             this.readAllMessages.Name = "readAllMessages";
-            this.readAllMessages.Size = new System.Drawing.Size(252, 55);
+            this.readAllMessages.Size = new System.Drawing.Size(157, 55);
             this.readAllMessages.TabIndex = 19;
-            this.readAllMessages.Text = "Показать следующее событие";
+            this.readAllMessages.Text = "Следующее событие";
             this.readAllMessages.UseVisualStyleBackColor = true;
             this.readAllMessages.Click += new System.EventHandler(this.readAllMessages_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(275, 26);
+            this.button10.Location = new System.Drawing.Point(8, 89);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(252, 55);
+            this.button10.Size = new System.Drawing.Size(173, 55);
             this.button10.TabIndex = 18;
-            this.button10.Text = "Показать последнее событие";
+            this.button10.Text = "Последнее событие";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(8, 89);
+            this.button9.Location = new System.Drawing.Point(189, 89);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(252, 55);
+            this.button9.Size = new System.Drawing.Size(173, 55);
             this.button9.TabIndex = 17;
-            this.button9.Text = "Показать предыдущее событие";
+            this.button9.Text = "Предыдущее событие";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -1541,6 +1689,7 @@
             this.dataFromPort4.Margin = new System.Windows.Forms.Padding(0);
             this.dataFromPort4.Multiline = true;
             this.dataFromPort4.Name = "dataFromPort4";
+            this.dataFromPort4.ReadOnly = true;
             this.dataFromPort4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataFromPort4.Size = new System.Drawing.Size(555, 600);
             this.dataFromPort4.TabIndex = 9;
@@ -1554,12 +1703,24 @@
             // lbCOMinfo
             // 
             this.lbCOMinfo.AutoSize = true;
-            this.lbCOMinfo.Location = new System.Drawing.Point(399, 10);
+            this.lbCOMinfo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbCOMinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbCOMinfo.Location = new System.Drawing.Point(447, 7);
             this.lbCOMinfo.Name = "lbCOMinfo";
-            this.lbCOMinfo.Size = new System.Drawing.Size(46, 17);
+            this.lbCOMinfo.Size = new System.Drawing.Size(0, 17);
             this.lbCOMinfo.TabIndex = 2;
-            this.lbCOMinfo.Text = "label3";
-            this.lbCOMinfo.Click += new System.EventHandler(this.lbCOMinfo_Click);
+            // 
+            // cbAutoScroll
+            // 
+            this.cbAutoScroll.AutoSize = true;
+            this.cbAutoScroll.Checked = true;
+            this.cbAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAutoScroll.Location = new System.Drawing.Point(309, 6);
+            this.cbAutoScroll.Name = "cbAutoScroll";
+            this.cbAutoScroll.Size = new System.Drawing.Size(111, 21);
+            this.cbAutoScroll.TabIndex = 3;
+            this.cbAutoScroll.Text = "Авто скролл";
+            this.cbAutoScroll.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1567,6 +1728,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(567, 846);
+            this.Controls.Add(this.cbAutoScroll);
             this.Controls.Add(this.lbCOMinfo);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -1607,12 +1769,18 @@
             this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -1719,7 +1887,6 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox dataFromPort4;
-        private System.Windows.Forms.TextBox dataFromPort;
         private System.Windows.Forms.TextBox dataFromPort3;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
@@ -1736,9 +1903,22 @@
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Button setDetectionAlgorithmX;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.ComboBox cbRegimSrabotka;
+        private System.Windows.Forms.Button setAutoAlgorithmX;
+        private System.Windows.Forms.RadioButton rbAddDelay;
+        private System.Windows.Forms.RadioButton rbBlockAuto;
+        private System.Windows.Forms.Button setStartAlgorithmXY;
+        private System.Windows.Forms.RadioButton rbLikeAuto;
+        private System.Windows.Forms.RadioButton rbDelay;
+        private System.Windows.Forms.RadioButton rbBos;
+        private System.Windows.Forms.RadioButton rbTemp;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.CheckBox cbAutoScroll;
+        private System.Windows.Forms.RichTextBox dataFromPort;
     }
 }
 

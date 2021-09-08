@@ -190,7 +190,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comList;
         private System.Windows.Forms.ComboBox baudRateList;
+        public System.Windows.Forms.ComboBox comList;
     }
 }

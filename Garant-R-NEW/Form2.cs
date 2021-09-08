@@ -19,7 +19,6 @@ namespace Garant_R_NEW
         public Form2(Form1 F1_)
         {
             F1 = F1_;
-            F1.Owner = this;
             InitializeComponent();
 
             //Получаем список доступных COM-портов
@@ -57,7 +56,7 @@ namespace Garant_R_NEW
                     { }
                                  
 
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {
