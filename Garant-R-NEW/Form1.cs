@@ -20,6 +20,7 @@ namespace Garant_R_NEW
         public SerialPort port = new SerialPort();
         public int alarmStorage, bosFaultStorage, burFaultStorage, autoStorage, voltStorage;
 
+
         string passTaken = "";
 
         char[] h = { '0', '0' };
@@ -143,28 +144,6 @@ namespace Garant_R_NEW
             F2.Show();
         }
 
-        //public async Task<string> DoWork()
-        //{
-        //    Task<string> task = new Task<string>(ReadArchiveAsync);
-        //    task.Start();
-        //    string a = await task;
-        //    return "";
-        //}
-
-        //public string ReadArchiveAsync()
-        //{
-        //    string indata;
-        //    indata = port.ReadExisting();
-        //    buffer += indata;
-        //    while (buffer.Contains("\r"))
-        //    {
-        //        str = buffer.Remove(buffer.IndexOf("\r"));
-        //        buffer = buffer.Remove(0, buffer.IndexOf("\r") + 1);
-        //        this.BeginInvoke(new SetTextDeleg(si_DataReceived1), new object[] { str });
-        //    }
-        //    return "";
-        //}
-
         //Обработчкик события получения нового сообщение из COM-порта
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
@@ -197,7 +176,7 @@ namespace Garant_R_NEW
         //Делегат от COM-порта к интерфейсу
         private void si_DataReceived(string data)
         {
-            parcer(data);
+            parcer(data);123
         }
 
         private void si_DataReceived1(string data)
@@ -684,10 +663,35 @@ namespace Garant_R_NEW
             }
         }
 
+        //public string DataForArchive(string data)
+        //{
+        //    string textToArhcive = "";
+        //    if (data.Contains("checkedPass true"))
+        //    {
+        //        BufferClass1.PasswordChecked = "checkedPass true";
+        //        if (data.Contains("Начало передачи архива"))
+        //        {
+        //            archiveReading = true;
+        //            textToArhcive = data.Trim();
+        //            if (data.Contains("Ev"))
+        //            {
+        //                data = data.Remove(0, 3);
+        //                DateTime localTime = DateTime.Now;
+        //                textToArhcive += "[" + localTime.ToString() + "]: ";
+        //                textToArhcive += data.Trim() + "\r\n";
+        //            }
+        //            else if (data.Contains("Передача архива завершена"))
+        //            {
+        //                archiveReading = false;
+        //            }
+        //        }
+        //    }
+        //    return textToArhcive;
+        //}
+
         private void parcer(string data_fromPort)
         {
             DateTime localTime = DateTime.Now;
-
 
             if (!data_fromPort.Contains("Ev") && !data_fromPort.Contains("Текущее состояние направления")
                 && !data_fromPort.Contains("sound") && !data_fromPort.Contains("checkedPass")
