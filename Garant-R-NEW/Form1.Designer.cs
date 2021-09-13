@@ -146,7 +146,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.readAllMessages = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -155,6 +154,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbCOMinfo = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -362,7 +362,7 @@
             this.tabPage2.Controls.Add(this.dataFromPort2);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(417, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "      Настройка      ";
@@ -387,7 +387,7 @@
             this.tabPage5.Controls.Add(this.groupBox7);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(393, 376);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Основные";
@@ -744,7 +744,7 @@
             this.tabPage7.Controls.Add(this.groupBox13);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(393, 376);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Связь РКН-БУР";
@@ -816,7 +816,7 @@
             this.tabPage6.Controls.Add(this.groupBox4);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(393, 376);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Пользовательские";
@@ -1040,9 +1040,9 @@
             this.tabPage8.Controls.Add(this.groupBox15);
             this.tabPage8.Controls.Add(this.groupBox14);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage8.Size = new System.Drawing.Size(393, 376);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Придумать название";
@@ -1054,9 +1054,9 @@
             this.groupBox16.Controls.Add(this.rbAddDelay);
             this.groupBox16.Controls.Add(this.rbBlockAuto);
             this.groupBox16.Location = new System.Drawing.Point(4, 202);
-            this.groupBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox16.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox16.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox16.Size = new System.Drawing.Size(386, 66);
             this.groupBox16.TabIndex = 2;
             this.groupBox16.TabStop = false;
@@ -1065,7 +1065,7 @@
             // setAutoAlgorithmX
             // 
             this.setAutoAlgorithmX.Location = new System.Drawing.Point(184, 17);
-            this.setAutoAlgorithmX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.setAutoAlgorithmX.Margin = new System.Windows.Forms.Padding(2);
             this.setAutoAlgorithmX.Name = "setAutoAlgorithmX";
             this.setAutoAlgorithmX.Size = new System.Drawing.Size(197, 39);
             this.setAutoAlgorithmX.TabIndex = 2;
@@ -1077,7 +1077,7 @@
             // 
             this.rbAddDelay.AutoSize = true;
             this.rbAddDelay.Location = new System.Drawing.Point(8, 39);
-            this.rbAddDelay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbAddDelay.Margin = new System.Windows.Forms.Padding(2);
             this.rbAddDelay.Name = "rbAddDelay";
             this.rbAddDelay.Size = new System.Drawing.Size(164, 17);
             this.rbAddDelay.TabIndex = 1;
@@ -1089,7 +1089,7 @@
             this.rbBlockAuto.AutoSize = true;
             this.rbBlockAuto.Checked = true;
             this.rbBlockAuto.Location = new System.Drawing.Point(8, 17);
-            this.rbBlockAuto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbBlockAuto.Margin = new System.Windows.Forms.Padding(2);
             this.rbBlockAuto.Name = "rbBlockAuto";
             this.rbBlockAuto.Size = new System.Drawing.Size(149, 17);
             this.rbBlockAuto.TabIndex = 0;
@@ -1103,9 +1103,9 @@
             this.groupBox15.Controls.Add(this.groupBox17);
             this.groupBox15.Controls.Add(this.setStartAlgorithmXY);
             this.groupBox15.Location = new System.Drawing.Point(4, 80);
-            this.groupBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox15.Size = new System.Drawing.Size(386, 117);
             this.groupBox15.TabIndex = 1;
             this.groupBox15.TabStop = false;
@@ -1116,9 +1116,9 @@
             this.groupBox18.Controls.Add(this.rbDelay);
             this.groupBox18.Controls.Add(this.rbLikeAuto);
             this.groupBox18.Location = new System.Drawing.Point(194, 17);
-            this.groupBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox18.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox18.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox18.Size = new System.Drawing.Size(188, 64);
             this.groupBox18.TabIndex = 10;
             this.groupBox18.TabStop = false;
@@ -1128,7 +1128,7 @@
             // 
             this.rbDelay.AutoSize = true;
             this.rbDelay.Location = new System.Drawing.Point(4, 19);
-            this.rbDelay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbDelay.Margin = new System.Windows.Forms.Padding(2);
             this.rbDelay.Name = "rbDelay";
             this.rbDelay.Size = new System.Drawing.Size(97, 17);
             this.rbDelay.TabIndex = 7;
@@ -1140,7 +1140,7 @@
             this.rbLikeAuto.AutoSize = true;
             this.rbLikeAuto.Checked = true;
             this.rbLikeAuto.Location = new System.Drawing.Point(4, 41);
-            this.rbLikeAuto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbLikeAuto.Margin = new System.Windows.Forms.Padding(2);
             this.rbLikeAuto.Name = "rbLikeAuto";
             this.rbLikeAuto.Size = new System.Drawing.Size(185, 17);
             this.rbLikeAuto.TabIndex = 8;
@@ -1153,9 +1153,9 @@
             this.groupBox17.Controls.Add(this.rbTemp);
             this.groupBox17.Controls.Add(this.rbBos);
             this.groupBox17.Location = new System.Drawing.Point(10, 17);
-            this.groupBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox17.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox17.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox17.Size = new System.Drawing.Size(180, 64);
             this.groupBox17.TabIndex = 12;
             this.groupBox17.TabStop = false;
@@ -1166,7 +1166,7 @@
             this.rbTemp.AutoSize = true;
             this.rbTemp.Checked = true;
             this.rbTemp.Location = new System.Drawing.Point(4, 17);
-            this.rbTemp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbTemp.Margin = new System.Windows.Forms.Padding(2);
             this.rbTemp.Name = "rbTemp";
             this.rbTemp.Size = new System.Drawing.Size(173, 17);
             this.rbTemp.TabIndex = 5;
@@ -1178,7 +1178,7 @@
             // 
             this.rbBos.AutoSize = true;
             this.rbBos.Location = new System.Drawing.Point(4, 39);
-            this.rbBos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbBos.Margin = new System.Windows.Forms.Padding(2);
             this.rbBos.Name = "rbBos";
             this.rbBos.Size = new System.Drawing.Size(161, 17);
             this.rbBos.TabIndex = 6;
@@ -1188,7 +1188,7 @@
             // setStartAlgorithmXY
             // 
             this.setStartAlgorithmXY.Location = new System.Drawing.Point(8, 86);
-            this.setStartAlgorithmXY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.setStartAlgorithmXY.Margin = new System.Windows.Forms.Padding(2);
             this.setStartAlgorithmXY.Name = "setStartAlgorithmXY";
             this.setStartAlgorithmXY.Size = new System.Drawing.Size(374, 26);
             this.setStartAlgorithmXY.TabIndex = 11;
@@ -1202,9 +1202,9 @@
             this.groupBox14.Controls.Add(this.label3);
             this.groupBox14.Controls.Add(this.cbRegimSrabotka);
             this.groupBox14.Location = new System.Drawing.Point(4, 5);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox14.Size = new System.Drawing.Size(386, 70);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
@@ -1213,7 +1213,7 @@
             // setDetectionAlgorithmX
             // 
             this.setDetectionAlgorithmX.Location = new System.Drawing.Point(208, 21);
-            this.setDetectionAlgorithmX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.setDetectionAlgorithmX.Margin = new System.Windows.Forms.Padding(2);
             this.setDetectionAlgorithmX.Name = "setDetectionAlgorithmX";
             this.setDetectionAlgorithmX.Size = new System.Drawing.Size(173, 38);
             this.setDetectionAlgorithmX.TabIndex = 2;
@@ -1239,7 +1239,7 @@
             "B",
             "C"});
             this.cbRegimSrabotka.Location = new System.Drawing.Point(4, 40);
-            this.cbRegimSrabotka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRegimSrabotka.Margin = new System.Windows.Forms.Padding(2);
             this.cbRegimSrabotka.Name = "cbRegimSrabotka";
             this.cbRegimSrabotka.Size = new System.Drawing.Size(186, 21);
             this.cbRegimSrabotka.TabIndex = 0;
@@ -1310,7 +1310,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dataFromPort, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1321,12 +1321,10 @@
             // 
             // dataFromPort
             // 
-            this.dataFromPort.Location = new System.Drawing.Point(2, 2);
-            this.dataFromPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataFromPort.Location = new System.Drawing.Point(3, 3);
             this.dataFromPort.Name = "dataFromPort";
-            this.dataFromPort.ReadOnly = true;
-            this.dataFromPort.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.dataFromPort.Size = new System.Drawing.Size(413, 303);
+            this.dataFromPort.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.dataFromPort.Size = new System.Drawing.Size(411, 301);
             this.dataFromPort.TabIndex = 0;
             this.dataFromPort.Text = "";
             this.dataFromPort.TextChanged += new System.EventHandler(this.DataFromPort_TextChanged);
@@ -1534,7 +1532,7 @@
             this.tabPage4.Controls.Add(this.dataFromPort4);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(417, 625);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "           Архив           ";
@@ -1542,7 +1540,6 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.button23);
             this.groupBox10.Controls.Add(this.button12);
             this.groupBox10.Controls.Add(this.readAllMessages);
             this.groupBox10.Controls.Add(this.button10);
@@ -1555,22 +1552,11 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Управление архивом";
             // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(6, 22);
-            this.button23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(266, 45);
-            this.button23.TabIndex = 21;
-            this.button23.Text = "Показать весь архив";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click_1);
-            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(278, 28);
+            this.button12.Location = new System.Drawing.Point(4, 17);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(127, 32);
+            this.button12.Size = new System.Drawing.Size(200, 47);
             this.button12.TabIndex = 20;
             this.button12.Text = "Очистить";
             this.button12.UseVisualStyleBackColor = true;
@@ -1578,9 +1564,9 @@
             // 
             // readAllMessages
             // 
-            this.readAllMessages.Location = new System.Drawing.Point(278, 72);
+            this.readAllMessages.Location = new System.Drawing.Point(206, 70);
             this.readAllMessages.Name = "readAllMessages";
-            this.readAllMessages.Size = new System.Drawing.Size(127, 45);
+            this.readAllMessages.Size = new System.Drawing.Size(200, 45);
             this.readAllMessages.TabIndex = 19;
             this.readAllMessages.Text = "Следующее событие";
             this.readAllMessages.UseVisualStyleBackColor = true;
@@ -1588,9 +1574,9 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(6, 72);
+            this.button10.Location = new System.Drawing.Point(4, 70);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(130, 45);
+            this.button10.Size = new System.Drawing.Size(200, 47);
             this.button10.TabIndex = 18;
             this.button10.Text = "Последнее событие";
             this.button10.UseVisualStyleBackColor = true;
@@ -1598,9 +1584,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(142, 72);
+            this.button9.Location = new System.Drawing.Point(206, 17);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(130, 45);
+            this.button9.Size = new System.Drawing.Size(200, 47);
             this.button9.TabIndex = 17;
             this.button9.Text = "Предыдущее событие";
             this.button9.UseVisualStyleBackColor = true;
@@ -1634,12 +1620,26 @@
             this.lbCOMinfo.Size = new System.Drawing.Size(0, 13);
             this.lbCOMinfo.TabIndex = 2;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(225, 4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Авто скролл";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(425, 687);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lbCOMinfo);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -1826,7 +1826,7 @@
         private System.Windows.Forms.RadioButton rbTemp;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox dataFromPort;
     }
 }

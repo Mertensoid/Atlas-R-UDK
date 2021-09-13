@@ -108,11 +108,45 @@ namespace Garant_R_NEW
             lbCOMinfo.Text = port.PortName + " " + port.BaudRate + " bps";
         }
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, Int32 wParam, Int32 lParam);
+        const int WM_USER = 0x400;
+        const int EM_HIDESELECTION = WM_USER + 63;
+
+        void OnAppend(string text)
+        {
+            bool focused = dataFromPort.Focused;
+            //backup initial selection
+            int selection = dataFromPort.SelectionStart;
+            int length = dataFromPort.SelectionLength;
+            //allow autoscroll if selection is at end of text
+            bool autoscroll = (selection == dataFromPort.Text.Length);
+
+            if (!autoscroll)
+            {
+                //shift focus from RichTextBox to some other control
+                if (focused) dataFromPort.Focus();
+                //hide selection
+                SendMessage(dataFromPort.Handle, EM_HIDESELECTION, 1, 0);
+            }
+
+            dataFromPort.AppendText(text);
+
+            if (!autoscroll)
+            {
+                //restore initial selection
+                dataFromPort.SelectionStart = selection;
+                dataFromPort.SelectionLength = length;
+                //unhide selection
+                SendMessage(dataFromPort.Handle, EM_HIDESELECTION, 0, 0);
+                //restore focus to RichTextBox
+                if (focused) dataFromPort.Focus();
+            }
+        }
+
         private void DataFromPort_TextChanged(object sender, EventArgs e)
         {
-            dataFromPort.SelectionStart = dataFromPort.Text.Length;
-            dataFromPort.ScrollToCaret();
-            dataFromPort.Refresh();
+            OnAppend(dataFromPort.Text);
         }
 
         private void DataFromPort2_TextChanged(object sender, EventArgs e)
@@ -176,7 +210,7 @@ namespace Garant_R_NEW
         //Делегат от COM-порта к интерфейсу
         private void si_DataReceived(string data)
         {
-            parcer(data);123
+            parcer(data);
         }
 
         private void si_DataReceived1(string data)
