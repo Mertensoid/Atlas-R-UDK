@@ -95,16 +95,10 @@ namespace Garant_R_NEW
 
             if (this.Height > SystemInformation.VirtualScreen.Height)
             {
-                /*
-                tableLayoutPanel1.Height = (SystemInformation.VirtualScreen.Height * 9) / 10 - 419;
-                dataFromPort3.Height = (SystemInformation.VirtualScreen.Height * 9) / 10 - 287;
-                dataFromPort4.Height = (SystemInformation.VirtualScreen.Height * 9) / 10 - 344;
-                dataFromPort2.Height = (SystemInformation.VirtualScreen.Height * 9) / 10 - 515;*/
                 this.Height = (SystemInformation.VirtualScreen.Height * 9) / 10;
                 this.Width = this.Width + 18;
                 this.Top = 0;
             }
-
             lbCOMinfo.Text = port.PortName + " " + port.BaudRate + " bps";
         }
 
@@ -113,61 +107,44 @@ namespace Garant_R_NEW
         const int WM_USER = 0x400;
         const int EM_HIDESELECTION = WM_USER + 63;
 
-        void OnAppend(string text)
-        {
-            bool focused = dataFromPort.Focused;
-            //backup initial selection
-            int selection = dataFromPort.SelectionStart;
-            int length = dataFromPort.SelectionLength;
-            //allow autoscroll if selection is at end of text
-            bool autoscroll = (selection == dataFromPort.Text.Length);
-
-            if (!autoscroll)
-            {
-                //shift focus from RichTextBox to some other control
-                if (focused) dataFromPort.Focus();
-                //hide selection
-                SendMessage(dataFromPort.Handle, EM_HIDESELECTION, 1, 0);
-            }
-
-            dataFromPort.AppendText(text);
-
-            if (!autoscroll)
-            {
-                //restore initial selection
-                dataFromPort.SelectionStart = selection;
-                dataFromPort.SelectionLength = length;
-                //unhide selection
-                SendMessage(dataFromPort.Handle, EM_HIDESELECTION, 0, 0);
-                //restore focus to RichTextBox
-                if (focused) dataFromPort.Focus();
-            }
-        }
-
         private void DataFromPort_TextChanged(object sender, EventArgs e)
         {
-            OnAppend(dataFromPort.Text);
+            if(cbAutoScroll.Checked == true)
+            {
+                dataFromPort.SelectionStart = dataFromPort.Text.Length;
+                dataFromPort.ScrollToCaret();
+                dataFromPort.Refresh();
+            }
         }
 
-        private void DataFromPort2_TextChanged(object sender, EventArgs e)
+        private void dataFromPort3_TextChanged_1(object sender, EventArgs e)
         {
-            dataFromPort2.SelectionStart = dataFromPort2.Text.Length;
-            dataFromPort2.ScrollToCaret();
-            dataFromPort2.Refresh();
+            if (cbAutoScroll.Checked == true)
+            {
+                dataFromPort3.SelectionStart = dataFromPort3.Text.Length;
+                dataFromPort3.ScrollToCaret();
+                dataFromPort3.Refresh();
+            }
         }
 
-        private void DataFromPort3_TextChanged(object sender, EventArgs e)
+        private void dataFromPort4_TextChanged_1(object sender, EventArgs e)
         {
-            dataFromPort3.SelectionStart = dataFromPort3.Text.Length;
-            dataFromPort3.ScrollToCaret();
-            dataFromPort3.Refresh();
+            if (cbAutoScroll.Checked == true)
+            {
+                dataFromPort4.SelectionStart = dataFromPort4.Text.Length;
+                dataFromPort4.ScrollToCaret();
+                dataFromPort4.Refresh();
+            }
         }
 
-        private void DataFromPort4_TextChanged(object sender, EventArgs e)
+        private void dataFromPort2_TextChanged_1(object sender, EventArgs e)
         {
-            dataFromPort4.SelectionStart = dataFromPort4.Text.Length;
-            dataFromPort4.ScrollToCaret();
-            dataFromPort4.Refresh();
+            if (cbAutoScroll.Checked == true)
+            {
+                dataFromPort2.SelectionStart = dataFromPort2.Text.Length;
+                dataFromPort2.ScrollToCaret();
+                dataFromPort2.Refresh();
+            }
         }
 
         private void parametersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,9 +252,6 @@ namespace Garant_R_NEW
 
         private void getTime_Click(object sender, EventArgs e)
         {
-            //DateTime localTime = DateTime.Now;
-            //dataFromPort2.Text += "[" + localTime.ToString() + "]: ";
-            //dataFromPort2.Text += "Дата " + date + "\r\n";
             sendCommand("Date");
             sendCommand("Time");
         }
@@ -416,10 +390,6 @@ namespace Garant_R_NEW
         {
             Form4 F4 = new Form4(this);
             F4.Show();
-            /*
-            Form3 F3 = new Form3(this);
-            F3.Show();
-            */
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -430,19 +400,11 @@ namespace Garant_R_NEW
         private void button9_Click(object sender, EventArgs e)
         {
             sendCommand("Read_ev 1");
-            //askArchiveForPeriod " + 
-            //dateTimePicker1.Value.Day.ToString() + " " + dateTimePicker1.Value.Month.ToString() + " " + dateTimePicker1.Value.Year.ToString() + " " + dateTimePicker1.Value.Hour.ToString() + " " + dateTimePicker1.Value.Minute.ToString() + " " +
-            //dateTimePicker2.Value.Day.ToString() + " " + dateTimePicker2.Value.Month.ToString() + " " + dateTimePicker2.Value.Year.ToString() + f" " + dateTimePicker2.Value.Hour.ToString() + " " + dateTimePicker2.Value.Minute.ToString());
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             sendCommand("Read_ev 0");
-        }
-
-        private void saveAllMessages_Click(object sender, EventArgs e)
-        {
-            //sendCommand("Save_all");
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -459,8 +421,6 @@ namespace Garant_R_NEW
             catch
             { }
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -697,32 +657,6 @@ namespace Garant_R_NEW
             }
         }
 
-        //public string DataForArchive(string data)
-        //{
-        //    string textToArhcive = "";
-        //    if (data.Contains("checkedPass true"))
-        //    {
-        //        BufferClass1.PasswordChecked = "checkedPass true";
-        //        if (data.Contains("Начало передачи архива"))
-        //        {
-        //            archiveReading = true;
-        //            textToArhcive = data.Trim();
-        //            if (data.Contains("Ev"))
-        //            {
-        //                data = data.Remove(0, 3);
-        //                DateTime localTime = DateTime.Now;
-        //                textToArhcive += "[" + localTime.ToString() + "]: ";
-        //                textToArhcive += data.Trim() + "\r\n";
-        //            }
-        //            else if (data.Contains("Передача архива завершена"))
-        //            {
-        //                archiveReading = false;
-        //            }
-        //        }
-        //    }
-        //    return textToArhcive;
-        //}
-
         private void parcer(string data_fromPort)
         {
             DateTime localTime = DateTime.Now;
@@ -816,7 +750,6 @@ namespace Garant_R_NEW
             else if (data_fromPort.Contains("Установлена дата - "))
             {
                 textToData2 = data_fromPort.Trim();
-                //Распарсить дату в панель состояний
             }
             else if (data_fromPort.Contains("Параметры имеют недопустимые значения"))
             {
@@ -1132,14 +1065,6 @@ namespace Garant_R_NEW
                     supply_2_High = true;
                     supplyIndicator_2_new.Text = "ПИТАНИЕ 2 НЕИСПРАВНО";
                     BB_yellow(supplyIndicator_2_new);
-
-                    //supply_1_Low = true;
-                    //supplyIndicator_1_new.Text = "Напряжение понижено";
-                    //BB_yellow(supplyIndicator_1_new);
-
-                    //supply_2_Low = true;
-                    //supplyIndicator_2_new.Text = "Напряжение понижено";
-                    //BB_yellow(supplyIndicator_2_new);
                 }
                 else
                 {

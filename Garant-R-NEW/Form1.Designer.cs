@@ -38,15 +38,16 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.руководствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataFromPort3 = new System.Windows.Forms.RichTextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.startAll = new System.Windows.Forms.Button();
-            this.dataFromPort3 = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.blockAutoIndicator_new = new Garant_R_NEW.Beauty_Button_1();
             this.blockAuto = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataFromPort2 = new System.Windows.Forms.RichTextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -121,7 +122,6 @@
             this.setDetectionAlgorithmX = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbRegimSrabotka = new System.Windows.Forms.ComboBox();
-            this.dataFromPort2 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button20 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -145,16 +145,16 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataFromPort4 = new System.Windows.Forms.RichTextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
             this.readAllMessages = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.dataFromPort4 = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbCOMinfo = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbAutoScroll = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -256,9 +256,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataFromPort3);
             this.tabPage3.Controls.Add(this.groupBox12);
             this.tabPage3.Controls.Add(this.groupBox11);
-            this.tabPage3.Controls.Add(this.dataFromPort3);
             this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
@@ -266,6 +266,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "      Управление      ";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataFromPort3
+            // 
+            this.dataFromPort3.Location = new System.Drawing.Point(0, 0);
+            this.dataFromPort3.Name = "dataFromPort3";
+            this.dataFromPort3.Size = new System.Drawing.Size(409, 439);
+            this.dataFromPort3.TabIndex = 17;
+            this.dataFromPort3.Text = "";
+            this.dataFromPort3.TextChanged += new System.EventHandler(this.dataFromPort3_TextChanged_1);
             // 
             // groupBox12
             // 
@@ -312,17 +321,6 @@
             this.startAll.UseVisualStyleBackColor = false;
             this.startAll.Click += new System.EventHandler(this.startAll_Click);
             // 
-            // dataFromPort3
-            // 
-            this.dataFromPort3.Location = new System.Drawing.Point(0, 0);
-            this.dataFromPort3.Multiline = true;
-            this.dataFromPort3.Name = "dataFromPort3";
-            this.dataFromPort3.ReadOnly = true;
-            this.dataFromPort3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataFromPort3.Size = new System.Drawing.Size(417, 439);
-            this.dataFromPort3.TabIndex = 7;
-            this.dataFromPort3.TextChanged += new System.EventHandler(this.DataFromPort3_TextChanged);
-            // 
             // groupBox9
             // 
             this.groupBox9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -358,8 +356,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Controls.Add(this.dataFromPort2);
+            this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -367,6 +365,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "      Настройка      ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataFromPort2
+            // 
+            this.dataFromPort2.Location = new System.Drawing.Point(0, 0);
+            this.dataFromPort2.Name = "dataFromPort2";
+            this.dataFromPort2.Size = new System.Drawing.Size(417, 211);
+            this.dataFromPort2.TabIndex = 13;
+            this.dataFromPort2.Text = "";
+            this.dataFromPort2.TextChanged += new System.EventHandler(this.dataFromPort2_TextChanged_1);
             // 
             // tabControl2
             // 
@@ -1045,7 +1052,7 @@
             this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage8.Size = new System.Drawing.Size(393, 376);
             this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "Придумать название";
+            this.tabPage8.Text = "Алгоритмы";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // groupBox16
@@ -1243,17 +1250,6 @@
             this.cbRegimSrabotka.Name = "cbRegimSrabotka";
             this.cbRegimSrabotka.Size = new System.Drawing.Size(186, 21);
             this.cbRegimSrabotka.TabIndex = 0;
-            // 
-            // dataFromPort2
-            // 
-            this.dataFromPort2.Location = new System.Drawing.Point(0, 0);
-            this.dataFromPort2.Multiline = true;
-            this.dataFromPort2.Name = "dataFromPort2";
-            this.dataFromPort2.ReadOnly = true;
-            this.dataFromPort2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataFromPort2.Size = new System.Drawing.Size(417, 211);
-            this.dataFromPort2.TabIndex = 2;
-            this.dataFromPort2.TextChanged += new System.EventHandler(this.DataFromPort2_TextChanged);
             // 
             // tabPage1
             // 
@@ -1528,8 +1524,8 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.groupBox10);
             this.tabPage4.Controls.Add(this.dataFromPort4);
+            this.tabPage4.Controls.Add(this.groupBox10);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -1537,6 +1533,15 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "           Архив           ";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataFromPort4
+            // 
+            this.dataFromPort4.Location = new System.Drawing.Point(0, 0);
+            this.dataFromPort4.Name = "dataFromPort4";
+            this.dataFromPort4.Size = new System.Drawing.Size(417, 485);
+            this.dataFromPort4.TabIndex = 12;
+            this.dataFromPort4.Text = "";
+            this.dataFromPort4.TextChanged += new System.EventHandler(this.dataFromPort4_TextChanged_1);
             // 
             // groupBox10
             // 
@@ -1592,18 +1597,6 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // dataFromPort4
-            // 
-            this.dataFromPort4.Location = new System.Drawing.Point(0, 0);
-            this.dataFromPort4.Margin = new System.Windows.Forms.Padding(0);
-            this.dataFromPort4.Multiline = true;
-            this.dataFromPort4.Name = "dataFromPort4";
-            this.dataFromPort4.ReadOnly = true;
-            this.dataFromPort4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataFromPort4.Size = new System.Drawing.Size(417, 488);
-            this.dataFromPort4.TabIndex = 9;
-            this.dataFromPort4.TextChanged += new System.EventHandler(this.DataFromPort4_TextChanged);
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -1620,18 +1613,18 @@
             this.lbCOMinfo.Size = new System.Drawing.Size(0, 13);
             this.lbCOMinfo.TabIndex = 2;
             // 
-            // checkBox1
+            // cbAutoScroll
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(225, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Авто скролл";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.cbAutoScroll.AutoSize = true;
+            this.cbAutoScroll.BackColor = System.Drawing.SystemColors.Control;
+            this.cbAutoScroll.Checked = true;
+            this.cbAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAutoScroll.Location = new System.Drawing.Point(225, 4);
+            this.cbAutoScroll.Name = "cbAutoScroll";
+            this.cbAutoScroll.Size = new System.Drawing.Size(89, 17);
+            this.cbAutoScroll.TabIndex = 3;
+            this.cbAutoScroll.Text = "Авто скролл";
+            this.cbAutoScroll.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1639,7 +1632,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(425, 687);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbAutoScroll);
             this.Controls.Add(this.lbCOMinfo);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -1653,12 +1646,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1694,7 +1685,6 @@
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1719,7 +1709,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox setID;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox dataFromPort2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -1796,8 +1785,6 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox dataFromPort4;
-        private System.Windows.Forms.TextBox dataFromPort3;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem руководствоToolStripMenuItem;
@@ -1826,8 +1813,11 @@
         private System.Windows.Forms.RadioButton rbTemp;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbAutoScroll;
         private System.Windows.Forms.RichTextBox dataFromPort;
+        private System.Windows.Forms.RichTextBox dataFromPort3;
+        private System.Windows.Forms.RichTextBox dataFromPort2;
+        private System.Windows.Forms.RichTextBox dataFromPort4;
     }
 }
 
