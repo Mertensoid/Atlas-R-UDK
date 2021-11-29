@@ -102,11 +102,6 @@ namespace Garant_R_NEW
             lbCOMinfo.Text = port.PortName + " " + port.BaudRate + " bps";
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, Int32 wParam, Int32 lParam);
-        const int WM_USER = 0x400;
-        const int EM_HIDESELECTION = WM_USER + 63;
-
         private void DataFromPort_TextChanged(object sender, EventArgs e)
         {
             if(cbAutoScroll.Checked == true)
@@ -667,7 +662,6 @@ namespace Garant_R_NEW
             {
                 dataFromPort.Text += "[" + localTime.ToString() + "]: ";
                 dataFromPort.Text += data_fromPort + "\r\n";
-
             }
 
             if (!data_fromPort.Contains("Ev") && !data_fromPort.Contains("checkedPass"))
