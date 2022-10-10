@@ -633,6 +633,7 @@ namespace Garant_R_NEW
             sendCommand("Read_all");
         }
 
+
         private void parcerArchive(string data)
         {
             if (data.Contains("Ev"))
