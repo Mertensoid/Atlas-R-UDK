@@ -869,29 +869,29 @@ namespace Garant_R_NEW
             {
                 textToData3 = data_fromPort.Trim();
                 automationBlocked = true;
-                blockAuto.Text = "Разблокировать автоматику";
-                autoIndicator_new.Text = "АВТОМАТИКА ЗАБЛОКИРОВАНА";
+                blockAuto.Text = "Включить автоматику";
+                autoIndicator_new.Text = "БЛОКИРОВКА ПУСКА";
                 BB_yellow(autoIndicator_new);
-                blockAutoIndicator_new.Text = "АВТОМАТИКА ЗАБЛОКИРОВАНА";
+                blockAutoIndicator_new.Text = "БЛОКИРОВКА ПУСКА";
                 BB_yellow(blockAutoIndicator_new);
             }
             else if (data_fromPort.Contains("Автоматика разблокирована"))
             {
                 textToData3 = data_fromPort.Trim();
                 automationBlocked = false;
-                blockAuto.Text = "Заблокировать автоматику";
+                blockAuto.Text = "Заблокировать пуск";
                 if (automationProlonged)
                 {
-                    autoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ (+120 СЕК)";
+                    autoIndicator_new.Text = "РУЧНОЙ РЕЖИМ РАБОТЫ";
                     BB_yellow(autoIndicator_new);
-                    blockAutoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ (+120 СЕК)";
+                    blockAutoIndicator_new.Text = "РУЧНОЙ РЕЖИМ РАБОТЫ";
                     BB_yellow(blockAutoIndicator_new);
                 }
                 else
                 {
-                    autoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ";
+                    autoIndicator_new.Text = "АВТОМАТИКА ВКЛЮЧЕНА";
                     BB_green(autoIndicator_new);
-                    blockAutoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ";
+                    blockAutoIndicator_new.Text = "АВТОМАТИКА ВКЛЮЧЕНА";
                     BB_green(blockAutoIndicator_new);
                 }
             }
@@ -977,25 +977,25 @@ namespace Garant_R_NEW
                 if ((i & 32) > 0)
                 {
                     automationBlocked = true;
-                    autoIndicator_new.Text = "АВТОМАТИКА ЗАБЛОКИРОВАНА";
+                    autoIndicator_new.Text = "БЛОКИРОВКА ПУСКА";
                     BB_yellow(autoIndicator_new);
-                    blockAutoIndicator_new.Text = "АВТОМАТИКА ЗАБЛОКИРОВАНА";
+                    blockAutoIndicator_new.Text = "БЛОКИРОВКА ПУСКА";
                     BB_yellow(blockAutoIndicator_new);
-                    blockAuto.Text = "Разблокировать автоматику";
+                    blockAuto.Text = "Включить автоматику";
                 }
                 else if ((i & 2) > 0)
                 {
                     automationProlonged = true;
-                    autoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ (+120 СЕК)";
+                    autoIndicator_new.Text = "РУЧНОЙ РЕЖИМ РАБОТЫ";
                     BB_yellow(autoIndicator_new);
-                    blockAutoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ (+120 СЕК)";
+                    blockAutoIndicator_new.Text = "РУЧНОЙ РЕЖИМ РАБОТЫ";
                     BB_yellow(blockAutoIndicator_new);
                 }
                 else
                 {
-                    autoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ";
+                    autoIndicator_new.Text = "АВТОМАТИКА ВКЛЮЧЕНА";
                     BB_green(autoIndicator_new);
-                    blockAutoIndicator_new.Text = "АВТОМАТИКА В НОРМЕ";
+                    blockAutoIndicator_new.Text = "АВТОМАТИКА ВКЛЮЧЕНА";
                     BB_green(blockAutoIndicator_new);
                     automationProlonged = false;
                     automationBlocked = false;
