@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
+using Garant_R_NEW.Entity;
 
 namespace Garant_R_NEW
 {
     public partial class Form2 : Form
     {
+        Messenger messenger = new Messenger();
         Form1 F1;
         string accessPass = "";
         public Form2(Form1 F1_)
@@ -21,6 +23,7 @@ namespace Garant_R_NEW
             F1 = F1_;
             InitializeComponent();
 
+            Console.WriteLine(messenger.userMessages[0]);
             //Получаем список доступных COM-портов
             String[] comNames = SerialPort.GetPortNames();
             foreach (string currentPort in comNames)
